@@ -1,16 +1,17 @@
-import { useState } from 'react'
-
-import './App.css'
-import TenantDetailsForm from './Pages/TenantDetailsForm'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import HomePage from './Pages/HomePage';
+import TenantDetailsForm from './Pages/TenantDetailsForm';
+import './App.css';
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <TenantDetailsForm/>
-    </>
-  )
+    <Router>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/new-tenant" element={<TenantDetailsForm />} />
+      </Routes>
+    </Router>
+  );
 }
 
-export default App
+export default App;
